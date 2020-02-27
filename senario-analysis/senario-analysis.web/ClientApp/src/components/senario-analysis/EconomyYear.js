@@ -3,20 +3,14 @@
 export class EconomyYear extends Component {
     static displayName = EconomyYear.name;
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: props.value,
-            rate: props.rate
-        };
-    }
+
 
     render() {
         return (
             <React.Fragment>
                 <div className="text-center">
-                    <label className="badge badge-dark">{this.state.value}</label>
-                    <input className="w-100" type="number" min="0.01" step="0.01" onChange={(e) => this.props.onRateChange(e, this.state)} />
+                    <label className="badge badge-dark">{this.props.value}</label>
+                    <input className="w-100" type="number" value={this.props.rate} min="0.000" max="1" step="0.001" onChange={(e) => this.props.onRateChange(e, this.props.value)} />
                 </div>
             </React.Fragment>
         );

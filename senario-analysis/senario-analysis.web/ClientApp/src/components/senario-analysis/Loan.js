@@ -8,8 +8,8 @@ export class Loan extends Component {
     render() {
         return (
             <React.Fragment>
-                <LoanAmount />
-                <LoanRates />
+                <LoanAmount onAmountChange={this.props.onAmountChange} />
+                <LoanRates onAddRate={this.props.onAddRate}/>
             </React.Fragment>
         );
     }

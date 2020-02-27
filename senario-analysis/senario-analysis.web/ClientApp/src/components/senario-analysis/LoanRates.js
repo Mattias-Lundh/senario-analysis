@@ -34,7 +34,9 @@ export class LoanRates extends Component {
 
         if (this.rateInputProvided()) {
             const rate = { ...this.state.rate, created: true }
-            this.setState({ rate, floatingProportion: this.calculateFloatingProportion()})
+            this.setState({ rate, floatingProportion: this.calculateFloatingProportion() })
+
+            this.props.onAddRate(this.state.rate)
         }
     }
 
